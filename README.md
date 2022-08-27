@@ -16,7 +16,8 @@ Segue a lista de tarefas a serem desenvolvidas no projeto:
 ``` 
 Para criar o ambiente virtual: abrir terminal, prompt de comando de digitar: 
 python -m venv .\venv\       
-(se der erro, é necessário checar versão, no terminal: pynthon--version, se for python 2,  checar se há o python3 instalado: python3--version. Se for o 3 instalado necessário digitar python3 no código acima)
+(se der erro, é necessário checar versão, no terminal: pynthon--version, se for python 2,  checar se há o python3 instalado: python3--version. 
+Se for o 3 instalado necessário digitar python3 no código acima)
 Para ativar o ambiente virtual, digitar: 
 venv\Scripts\activate
 ```
@@ -27,14 +28,30 @@ python -m pip install django==3.2
 ```
 - [x] Criar o Projeto PersonalCheff
 ```
-Digitar no terminal: django-admin help (ou django-admin.py help) pra ver a lista de comandos.
+Digitar no terminal:
+django-admin help (ou django-admin.py help) pra ver a lista de comandos.
 Para criar o projeto: 
 django-admin startproject PersonalCheffProj
 ```
-- [ ] Subir o servidor e testar o projeto
-- [ ] Alterar o idioma do projeto para `pt-br`
+- [x] Subir o servidor e testar o projeto
+```
+Abrir a pasta do projeto no terminal:
+cd nomedapasta
+Subir o servidor (testar o projeto): 
+python manage.py runserver
+Clicar no link do servidor para abrir a página.
+```
+
+- [x] Alterar o idioma do projeto para `pt-br`
+```
+Entrar no arquivo settings.py do projeto e trocar idioma para LANGUAGE_CODE = 'pt-br' (linha 106). Enquanto servidor estiver rodando atualiza automaticamente, se parar necessário rodar o runserver novamente.
+```
 - [ ] Alterar o timezone do projeto para `America/Sao_Paulo`
+```
+Entrar no arquivo settings e mudar TIME_ZONE = 'America/Sao_Paulo' (linha 108)
+```
 - [ ] Criar o app receitas
+
 - [ ] Registrar o app receitas
 - [ ] Configurar a rota inicial (index)
 - [ ] Criar a view para a rota inicial
