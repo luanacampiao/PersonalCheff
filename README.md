@@ -50,12 +50,55 @@ Entrar no arquivo settings.py do projeto e trocar idioma para LANGUAGE_CODE = 'p
 ```
 Entrar no arquivo settings e mudar TIME_ZONE = 'America/Sao_Paulo' (linha 108)
 ```
-- [ ] Criar o app receitas
+- [x] Criar o app receitas
+```
+Abre outro terminal (clica novamente em prompt comando e renomeia, deixa o servidor rodando em um prompt e o outro será para uso)
+Uma aplicação pode estar em mais de um projeto.
+Para criar uma aplicação, entra na pasta do projeto:
+cd PersonalCheffProj
+Depois cria a aplicação:
+python manage.py startapp receitas
+```
+- [x] Registrar o app receitas
+```
+Entrar no arquivo apps da pasta receitas, e checar o nome da aplicação.
+Entra no arquivo settings do PersonalChefProj e encontrar INSTALLED_APPS, aplicações que já possuem (linha 33) e adicionar a aplicação 'receitas'(nome igual está na pasta apps)
+```
+- [x] Configurar a rota inicial (index)
+```
+- Criar um arquivo chamado: urls.py
+- Escrever dentro dele:
+from django.urls import path
+from . import views
 
-- [ ] Registrar o app receitas
-- [ ] Configurar a rota inicial (index)
-- [ ] Criar a view para a rota inicial
-- [ ] Registrar a rota inicial
+urlpatterns = [
+    path('',views.index, name='index')
+]
+```
+- [x] Criar a view para a rota inicial
+```
+- Dentro do arquivo views na pasta receitas:
+from django.shortcuts import render
+from django.http import HttpResponse
+
+def index(request):
+    return HttpResponse("Seja Bem Vindo")
+```
+
+- [x] Registrar a rota inicial
+```
+- Dentro da pasta url do projeto, a partir da linha 16:
+
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('receitas.urls')),
+]
+```
+
+
 - [ ] Criar o arquivo index.html
 
 ## 📝 Licença
