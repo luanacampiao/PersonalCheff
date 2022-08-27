@@ -16,11 +16,21 @@ Segue a lista de tarefas a serem desenvolvidas no projeto:
 ``` 
 Para criar o ambiente virtual: abrir terminal, prompt de comando de digitar: 
 python -m venv .\venv\       
+(se der erro, é necessário checar versão, no terminal: pynthon--version, se for python 2,  checar se há o python3 instalado: python3--version. Se for o 3 instalado necessário digitar python3 no código acima)
 Para ativar o ambiente virtual, digitar: 
 venv\Scripts\activate
 ```
-- [ ] Instalar o Django
-- [ ] Criar o Projeto PersonalCheff
+- [x] Instalar o Django
+```
+Entrar no site do Django e veja qual versão terá suporte por mais tempo. Em seguida, no terminal:
+python -m pip install django==3.2
+```
+- [x] Criar o Projeto PersonalCheff
+```
+Digitar no terminal: django-admin help (ou django-admin.py help) pra ver a lista de comandos.
+Para criar o projeto: 
+django-admin startproject PersonalCheffProj
+```
 - [ ] Subir o servidor e testar o projeto
 - [ ] Alterar o idioma do projeto para `pt-br`
 - [ ] Alterar o timezone do projeto para `America/Sao_Paulo`
