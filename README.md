@@ -46,7 +46,7 @@ Clicar no link do servidor para abrir a página.
 ```
 Entrar no arquivo settings.py do projeto e trocar idioma para LANGUAGE_CODE = 'pt-br' (linha 106). Enquanto servidor estiver rodando atualiza automaticamente, se parar necessário rodar o runserver novamente.
 ```
-- [ ] Alterar o timezone do projeto para `America/Sao_Paulo`
+- [x] Alterar o timezone do projeto para `America/Sao_Paulo`
 ```
 Entrar no arquivo settings e mudar TIME_ZONE = 'America/Sao_Paulo' (linha 108)
 ```
@@ -99,7 +99,21 @@ urlpatterns = [
 ```
 
 
-- [ ] Criar o arquivo index.html
+- [x] Criar o arquivo index.html
+
+- Dentro da pasta receitas(app) criar a pasta templates
+- Dentro da pasta templates criar os arquivos html, começando pelo index.html
+- Dentro do arquivo index: !(enter), muda lingua, adiciona o titulo 1  e titulo2 
+- No arquivo views do app (receitas) faça a seguinte alteração do código, apaga tudo e colocar:
+
+```
+from django.shortcuts import render
+
+def index(request):
+    return render(request,'index.html')
+```
+
+
 
 ## 📝 Licença
 Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais detalhes.
