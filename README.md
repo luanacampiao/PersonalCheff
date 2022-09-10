@@ -116,10 +116,21 @@ def index(request):
     - Dentro da pasta do projeto (PersonalCheffProj) criar uma pasta chamada 'static'
     - Dentro da pasta 'static', colocar as imagens, os arquivos css e os arquivos js que for utilizar
     - no arquivo 'settings.py':
-        - Realize a importação da biblioteca 'os' através do comando 'import os', ainda no 'settings.py', na linha 58 'DIRS' adicione o caminho dos templates da seguinte forma:
+        - linha  'DIRS': Realize a importação da biblioteca 'os' através do comando 'import os', ainda no 'settings.py', adicione o caminho dos templates da seguinte forma:
         ```python
         'DIRS': [os.path.join(BASE_DIR,'receitas/templates')],
         ```
+        - linha 122 abaixo de 'STATIC_URL', adicione a seguinte linha:
+        ```python
+        STATIC_ROOT = Ele cria/envia arquivos para a pasta 'static' principal. É a configuração da rota através do comando; os.path.join(BASE_DIR,'static')
+        STATICFILES_DIR = [
+            os.path.join(BASE_DIR,'PersonalCheffProj/static')
+        ]
+        ```
+        Para testar, ir até o terminal e executar o comando: 'python manage.py collectstatic' , uma pasta chamada 'static' deverá ser criada na pasta raíz.<br>
+    - Inserir {% load static %} na primeira linha do arquivo index.html (dentro da pasta template). Este comando deve ser usado em todos os arquivos que você for utilizar arquivos estáticos.
+    - Insira uma imagem utilizando o comando <img src="{% static 'cheff_imagem.png' %}"> . Sempre que for utilizar um arquivo estático você deve utilizar <img src="{% static 'nomedoarquivodeimagemcomextensão'}">  
+     
  - [ ] Utilizando links
  - [ ] Criando o base.html
  - [ ] Separando em partials
