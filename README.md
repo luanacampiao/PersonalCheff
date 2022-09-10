@@ -112,7 +112,26 @@ from django.shortcuts import render
 def index(request):
     return render(request,'index.html')
 ```
-
+ - [X] Integrar arquivos estáticos (CSS, JS, IMG)
+    - Dentro da pasta do projeto (PersonalCheffProj) criar uma pasta chamada 'static'
+    - Dentro da pasta 'static', colocar as imagens, os arquivos css e os arquivos js que for utilizar
+    - no arquivo 'settings.py':
+        - Realize a importação da biblioteca 'os' através do comando 'import os', ainda no 'settings.py', na linha 58 'DIRS' adicione o caminho dos templates da seguinte forma:
+        ```python
+        'DIRS': [os.path.join(BASE_DIR,'receitas/templates')],
+        ```
+ - [ ] Utilizando links
+ - [ ] Criando o base.html
+ - [ ] Separando em partials
+ - [ ] Renderizando dados dinamicamente
+ - [ ] Criando um dicionario com as receitas
+ - [ ] Criando o banco de dados(MySQL/MariaDB)
+ - [ ] Instalando o conector do bando de dados MySQL
+ - [ ] Criando o modelo da receita
+ - [ ] Criando a migration (mapeamento)
+ - [ ] Realizando a migration
+ - [ ] Registrando um modelo no admin
+ - [ ] Criando um usuário para o ambiente administrativo
 
 
 ## 📝 Licença
