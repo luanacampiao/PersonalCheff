@@ -130,7 +130,36 @@ def index(request):
         Para testar, ir até o terminal e executar o comando: 'python manage.py collectstatic' , uma pasta chamada 'static' deverá ser criada na pasta raíz.<br>
     - Inserir {% load static %} na primeira linha do arquivo index.html (dentro da pasta template). Este comando deve ser usado em todos os arquivos que você for utilizar arquivos estáticos.
     - Insira uma imagem utilizando o comando <img src="{% static 'cheff_imagem.png' %}"> . Sempre que for utilizar um arquivo estático você deve utilizar <img src="{% static 'nomedoarquivodeimagemcomextensão'}">  
-     
+    - Criar um arquivo chamado estilos.css dentro da pasta 'static' do projeto para inserir informações de formatação da página:
+    ```
+    body{
+    background-color: #cacaca;
+    color: #181818;
+    font-family: 'Segoe UI';
+
+}
+
+.cheff_imagem{
+    width: 150px;
+}
+
+.tabela-receitas{
+    width: 90%;
+}
+
+.sucodelaranja_imagem{
+    width: 80px;
+}
+```
+    - no arquivo index.html adicionar os links:
+```
+         Para conectar a página html ao arquivo estilos.css:
+        <link rel="stylesheet" href="{% static 'estilos.css' %}">
+        Para inserir a imagem na aba da página:
+        <link rel="shortcut icon" href="{% static 'cheff_imagem.png'%}"
+        type="image/x-icon">
+```
+</head>
  - [ ] Utilizando links
  - [ ] Criando o base.html
  - [ ] Separando em partials
