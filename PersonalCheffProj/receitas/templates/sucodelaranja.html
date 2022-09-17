@@ -1,15 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
 <h1>Suco de Laranja</h1><br>
 <h2>Ingredientes</h2>
 <p>
-    12 laranjas
-    açúcar a gosto
-    gelo a gosto
+    <li>12 laranjas</li>
+    <li>açúcar a gosto</li>
+    <li>gelo a gosto</li>
 </p>
 <br>
 <h2>Modo de Preparo</h2>
 <p>
-    Lave as laranjas
-    Corte-as ao meio
-    Esprema a laranja em uma jarra
-    Adoce a gosto
+<ul>
+    <li>Lave as laranjas</li>
+    <li>Corte-as ao meio</li>
+    <li>Esprema a laranja em uma jarra</li>
+    <li>Adoce a gosto</li>
+</ul>
 </p>
+    <a href="{% url 'index' %}">Voltar</a>
+</p>
+{% endblock %}

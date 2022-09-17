@@ -1,27 +1,18 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PersonalCheff</title>
-    <link rel="stylesheet" href="{% static 'estilos.css' %}">
-    <link rel="shortcut icon" href="{% static 'cheff_imagem.png'%}"
-    type="image/x-icon">
-</head>
-<body>
+{% block content %}
+
     <h1>
         <img src="{% static 'cheff_imagem.png' %}" class = "cheff_imagem">
         Receitas
     </h1>
     <h2> Como preparar um deliciosas receitas</h2>
-<table border="1" class="tabela-receitas">
-    <tr>
-        <th>Dica</th>
-        <th>Vídeo</th>
-        <th>Passo a Passo</th>
-    </tr>
+    <table border="1" class="tabela-receitas">
+        <tr>
+          <th>Dica</th>
+          <th>Vídeo</th>
+          <th>Passo a Passo</th>
+         </tr>
     <tr>
         <td>
             <img src="{% static 'sucodelaranja_imagem.png'%}"
@@ -29,9 +20,8 @@
             Suco de Laranja
         </td>
         <td>https://www.youtube.com/watch?v=Nn9140bDPnc</td>
-        <td><a href="sucodelaranja"> Modo de preparo</a></td>
+        <td><a href="{% url 'sucodelaranja' %}"> Modo de preparo</a></td>
     </tr>
 </table>
-</body>
-</html>
+{% endblock %}
 

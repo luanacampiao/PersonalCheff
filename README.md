@@ -160,8 +160,16 @@ def index(request):
         type="image/x-icon">
 ```
 </head>
- - [ ] Utilizando links
- - [ ] Criando o base.html
+ - [X] Utilizando links
+    - Para criar um link para a página index, independente de onde você esteja utilize o comando 'url':
+    ```python
+    <a href="{% url 'index' %}">Página Inicial</a>
+    ```
+
+ - [X] Criando o base.html
+    - na pasta 'templates' crie o arquivo 'base.html'.
+    Esse arquivo contém todo o código de estrutura comum à todas as páginas. Nesse arquivo deve ficar tudo que tiver antes do 'body' e tudo que tiver depois do '/body'.
+    
  - [ ] Separando em partials
  - [ ] Renderizando dados dinamicamente
  - [ ] Criando um dicionario com as receitas
