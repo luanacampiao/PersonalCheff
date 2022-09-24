@@ -3,8 +3,8 @@
 {% block content %}
 {% include 'partials/header.html' %}
 {% include 'partials/menu.html' %}
-    <table border="1" class="tabela-receitas">
-        <tr>
+    <table border="1" class="table table-secondary table-striped table-hover">
+        <tr class= "table-dark">
             <th>Receita</th>
             <th>Vídeo</th>
             <th>Ações</th>
@@ -12,21 +12,17 @@
         <tr>
             <td>
                 <img src="{% static 'sucodelaranja_imagem.png' %}" class="icone-suco">
-                Suco de laranja
+                
+                {% for chave, uma_receita in lista_receitas.items %}
+                    <strong>{{uma_receita}}</strong><br>
+                {% endfor%}
+
             </td>
             <td>https://www.youtube.com/watch?v=Nn9140bDPnc</td>
-            <td><a href="{% url 'sucodelaranja' %}">Ver receita completa</a></td>
-        </tr>
-        <tr>
             <td>
-                <img src="{% static 'sucodelimao_imagem.png' %}" class="icone-suco">
-                Suco de limão
-            </td>
-            <td>https://www.youtube.com/watch?v=7aavIewcSY4</td>
-            <td>
-                <a href="{% url 'sucodelimao' %}">Ver receita completa</a>
-            </td>
+                <a href="{% url 'sucodelaranja' %}" class= "btn btn-dark">Ver receita completa</a></td>
         </tr>
+        
     </table>
 {% include 'partials/footer.html' %}
 {% endblock %}

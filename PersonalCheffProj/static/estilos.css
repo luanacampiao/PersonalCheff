@@ -1,18 +1,18 @@
 body{
-    background-color: #cacaca;
+    background-color: #e3e4ee;
     color: #181818;
     font-family: 'Segoe UI';
-
 }
 
-.cheff_imagem{
-    width: 150px;
+.imagem-logo{
+    width: 100px;
 }
 
 .tabela-receitas{
     width: 90%;
 }
 
-.sucodelaranja_imagem{
-    width: 80px;
+
+.icone-suco{
+    height: 20px;
 }
