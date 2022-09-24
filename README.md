@@ -152,14 +152,13 @@ def index(request):
 }
 ```
     - no arquivo index.html adicionar os links:
-```python
+    ```python
          Para conectar a página html ao arquivo estilos.css:
         <link rel="stylesheet" href="{% static 'estilos.css' %}">
         Para inserir a imagem na aba da página:
         <link rel="shortcut icon" href="{% static 'cheff_imagem.png'%}"
         type="image/x-icon">
-    
-```
+    ```
 
  - [X] Utilizando links
     - Para criar um link para a página index, independente de onde você esteja utilize o comando 'url':
@@ -250,7 +249,11 @@ def index(request):
     - Acesse o link PHPMyAdmin
     - Dentro do PHPMyAdmin, click no botão `novo` para criar um banco de dados, insira o nome `personalcheff_bd`
      
- - [ ] Instalando o conector do bando de dados MySQL
+ - [X] Instalando o conector do bando de dados MySQL
+    - no terminal: `pip install mysqlclient`
+ 
+ - [X] Configurar a conexão com mysql
+
  - [ ] Criando o modelo da receita
  - [ ] Criando a migration (mapeamento)
  - [ ] Realizando a migration
