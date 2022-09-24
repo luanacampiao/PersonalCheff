@@ -131,7 +131,7 @@ def index(request):
     - Inserir {% load static %} na primeira linha do arquivo index.html (dentro da pasta template). Este comando deve ser usado em todos os arquivos que você for utilizar arquivos estáticos.
     - Insira uma imagem utilizando o comando <img src="{% static 'cheff_imagem.png' %}"> . Sempre que for utilizar um arquivo estático você deve utilizar <img src="{% static 'nomedoarquivodeimagemcomextensão'}">  
     - Criar um arquivo chamado estilos.css dentro da pasta 'static' do projeto para inserir informações de formatação da página:
-    ```
+    ```css
     body{
     background-color: #cacaca;
     color: #181818;
@@ -152,14 +152,15 @@ def index(request):
 }
 ```
     - no arquivo index.html adicionar os links:
-```
+```python
          Para conectar a página html ao arquivo estilos.css:
         <link rel="stylesheet" href="{% static 'estilos.css' %}">
         Para inserir a imagem na aba da página:
         <link rel="shortcut icon" href="{% static 'cheff_imagem.png'%}"
         type="image/x-icon">
+    
 ```
-</head>
+
  - [X] Utilizando links
     - Para criar um link para a página index, independente de onde você esteja utilize o comando 'url':
     ```python
@@ -171,7 +172,7 @@ def index(request):
     - nesse arquivo deve conter o {% load static %}
     - nesse arquivo, no local aonde será carregado o conteúdo das outras páginas, deve existir os delimitadores {% block content %} e {% endblock %}
     - o código do base.html será algo parecido com:
-    ```
+    ```python
     {% load static %}
     <!DOCTYPE html>
     <html lang="pt-br">
@@ -229,7 +230,7 @@ def index(request):
     return render(request,'index.html',dados)
     ```
     - na template `index.html`, fazer um laço de repetição que verifique cada item da lista de receitas à cada passagem do laço:
-    ```python
+    ```pyhton
     {% for chave, uma_receita in lista_receitas.items %}
             <tr>
                 <td>
@@ -243,7 +244,12 @@ def index(request):
             </tr>
         {% endfor%}
     ```
- - [ ] Criando o banco de dados(MySQL/MariaDB)
+ - [X] Criando o banco de dados(MySQL/MariaDB)
+    - Abrir o XAMPP e start os serviços dp Apache e MySQL
+    - Click no botão admin do Apache
+    - Acesse o link PHPMyAdmin
+    - Dentro do PHPMyAdmin, click no botão `novo` para criar um banco de dados, insira o nome `personalcheff_bd`
+     
  - [ ] Instalando o conector do bando de dados MySQL
  - [ ] Criando o modelo da receita
  - [ ] Criando a migration (mapeamento)
