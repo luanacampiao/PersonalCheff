@@ -229,16 +229,20 @@ def index(request):
     return render(request,'index.html',dados)
     ```
     - na template `index.html`, fazer um laço de repetição que verifique cada item da lista de receitas à cada passagem do laço:
-    
-    <td>
-                <img src="{% static 'sucodelaranja_imagem.png' %}" class="icone-suco">
-                ```python
-                {% for chave, uma_receita in lista_receitas.items %}
-                    <strong>{{uma_receita}}</strong><br>
-                {% endfor%}
-                ```
-            </td>
-
+    ```python
+    {% for chave, uma_receita in lista_receitas.items %}
+            <tr>
+                <td>
+                    <img src="{% static 'sucodelaranja_imagem.png' %}" 
+                    class="icone-suco">
+                    {{uma_receita}}
+                </td>
+                <td>https://www.youtube.com/watch?v=Nn9140bDPnc</td>
+                <td>
+                    <a href="{% url 'sucodelaranja' %}" class= "btn btn-dark">Ver receita completa</a></td>
+            </tr>
+        {% endfor%}
+    ```
  - [ ] Criando o banco de dados(MySQL/MariaDB)
  - [ ] Instalando o conector do bando de dados MySQL
  - [ ] Criando o modelo da receita
