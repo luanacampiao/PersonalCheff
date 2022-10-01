@@ -308,7 +308,22 @@ admin.site.register(Receitas)
     def index(request):
     receitas= Receitas.objects.all()
     ```
-    - No arquivo index.html troque `{% for chave, uma_receita in lista_receitas.items %}` por:
+    - No arquivo index.html troque `{% for chave, uma_receita in lista_receitas.items %}` por: 
+    ```python
+    {% for receita in lista_receitas %}
+            <tr>
+                <td>
+                    {{receita.nome_receita}}
+                </td>
+                <td>{{receita.video}}</td>
+                <td>
+                    <a href="{% url 'sucodelaranja' %}" class= "btn btn-dark">Ver receita completa</a></td>
+                <td>
+                    {{receita.nota}}
+                </td>
+            </tr>
+        {% endfor%}
+        ``` 
 
  - [ ]  Exibição das páginas individuais das receitas
  
