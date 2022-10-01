@@ -253,9 +253,36 @@ def index(request):
     - no terminal: `pip install mysqlclient`
  
  - [X] Configurar a conexão com mysql
+    - No arquivo 'settings.py', na linha ~78 (abaixo de DATABASES = { ) configurar a conexão para o seu banco de dados como o exemplo:
+    ```python
+        'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'personalcheff_bd',
+        'USER' : 'root', #usuario do xammp é root (local) e tem todo tipo de permissão
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '3306' #porta padrão, tem no xammp tb
+    }
 
- - [ ] Criando o modelo da receita
+ - [X] Criando o modelo da receita
+    - Modelo é a representação das tabelas no banco de dados. Cada classe em uma model equivale a uma tabela.
+    - No arquivo 'receitas\models.py' crie a classe para a representação da tabela de receitas:
+    ```python
+    from django.db import models
+    from datetime import datetime
+
+    class Receitas(models.Model):
+    nome_receita = models.CharField(max_length=100)
+    video = models.CharField(max_length=80)
+    modo_preparo = models.TextField()
+    ingredientes = models.TextField()
+    nota = models.IntegerField()
+    data_receita = models.DateTimeField(default= datetime.now, black=True)
+    ```
+
  - [ ] Criando a migration (mapeamento)
+    - Preparar todas as models criadas para serem migradas para o banco de dados, gerando o arquivo receitas\migration\0001_initial.py
+    - no terminal digite: `python manage.py makemigrations`
  - [ ] Realizando a migration
  - [ ] Registrando um modelo no admin
  - [ ] Criando um usuário para o ambiente administrativo
