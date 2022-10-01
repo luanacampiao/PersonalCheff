@@ -287,10 +287,30 @@ def index(request):
     - Realizar a migration é criar fisicamente no banco de dados as tabelas preparadas anteriormente e, no nosso caso, as tabelas preparadas pelo django para o seu ambiente administrativo
     - no terminal digite: `python manage.py migrate`    
  - [X] Criando um usuário para o ambiente administrativo
-    - No terminal digite: python manage.py `createsuperuser`
-    - Em frente ao endereço do "site" digite \admin para acessar com o usuário e senha.
- - [ ] Registrando um modelo no admin
+    - O Django já cria um ambiente administrativo para nossa aplicação, ficando esse ambiente em `http://127.0.0.1:8000/admin/´
+    - Para utilizar esse ambiente administrativo, precisamos criar um usuário de acesso. No terminal digite: python manage.py `createsuperuser`
+    ***OBS: quando digitar a senha, ela não vai aparecer no terminal.
  
+ - [X] Registrando um modelo no admin
+    - Para criar o módulo referente ao nosso APP no ambiente admnistrativo, precisamos registrar nosso modelos no admin.
+    - Abra o arquivo `receitas\admin.py` e registre seu modelo:
+    ```python
+    from django.contrib import admin
+from .models import Receitas
+
+# Register your models here.
+admin.site.register(Receitas)
+    ```
+
+ - [X] Trazendo dados do banco de dados
+    - No arquivo views.py atualize a informação de def `index(request)`
+    ```python
+    def index(request):
+    receitas= Receitas.objects.all()
+    ```
+    - No arquivo index.html troque `{% for chave, uma_receita in lista_receitas.items %}` por:
+
+ - [ ]  Exibição das páginas individuais das receitas
  
 
 ## 📝 Licença
