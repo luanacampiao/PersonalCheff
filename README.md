@@ -280,12 +280,17 @@ def index(request):
     data_receita = models.DateTimeField(default= datetime.now, black=True)
     ```
 
- - [ ] Criando a migration (mapeamento)
+ - [X] Criando a migration (mapeamento)
     - Preparar todas as models criadas para serem migradas para o banco de dados, gerando o arquivo receitas\migration\0001_initial.py
     - no terminal digite: `python manage.py makemigrations`
- - [ ] Realizando a migration
+ - [X] Realizando a migration
+    - Realizar a migration é criar fisicamente no banco de dados as tabelas preparadas anteriormente e, no nosso caso, as tabelas preparadas pelo django para o seu ambiente administrativo
+    - no terminal digite: `python manage.py migrate`    
+ - [X] Criando um usuário para o ambiente administrativo
+    - No terminal digite: python manage.py `createsuperuser`
+    - Em frente ao endereço do "site" digite \admin para acessar com o usuário e senha.
  - [ ] Registrando um modelo no admin
- - [ ] Criando um usuário para o ambiente administrativo
+ 
  
 
 ## 📝 Licença
