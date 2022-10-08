@@ -20,7 +20,11 @@
                 <td>
                     <a href="{% url 'receita' receita.id %}" class= "btn btn-dark">Ver receita completa</a></td>
                 <td>
-                    {{receita.nota}}
+                    {% with ''|center:receita.nota as range %}
+                    {% for i in range %}
+                    *
+                    {% endfor %}
+                    {% endwith %}
                 </td>
             </tr>
         {% endfor%}
